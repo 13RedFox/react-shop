@@ -1,14 +1,9 @@
-import React from 'react';
+import { useContext } from 'react';
+import { ShopContext } from '../context';
 
-function CartItem({
-  mainId,
-  displayName,
-  price,
-  quantity,
-  removeFrom = Function.prototype,
-  incQuantity = Function.prototype,
-  decQuantity = Function.prototype,
-}) {
+function CartItem({ mainId, displayName, price, quantity }) {
+  const { removeFromCart, incQuantity, decQuantity } = useContext(ShopContext);
+
   return (
     <li className="collection-item">
       {displayName}{' '}
@@ -22,7 +17,7 @@ function CartItem({
         remove
       </i>{' '}
       = {price.regularPrice} руб.
-      <span className="secondary-content" onClick={() => removeFrom(mainId)}>
+      <span className="secondary-content" onClick={() => removeFromCart(mainId)}>
         <i className="material-icons cart-delete">clear</i>
       </span>
     </li>
