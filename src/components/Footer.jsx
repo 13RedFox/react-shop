@@ -8,7 +8,9 @@ function Footer() {
           © {new Date().getFullYear()} React Shop
           <a
             className="grey-text text-lighten-4 right"
-            href="https://github.com/13RedFox/react-shop">
+            href="https://github.com/13RedFox/react-shop"
+            target="_blank"
+            rel="noreferrer">
             GitHub Repo
           </a>
         </div>
